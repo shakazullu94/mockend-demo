@@ -1,123 +1,41 @@
 {
-  "Item": {
+  "Post": {
+    "title": { "loremWord": {} },
+    "comments": {
+      "hasMany": "Comment"
+    }
+  },
+  "Comment": {
+    "body": { "string": {} },
+    "post": {
+      "belongsTo": "Post"
+    }
+  },
+
+  "User": {
     "name": {
-      "string": [
-        "Aoth Agile Fighter Ring",
-        "Aoth Agile Fighter Earring",
-        "Aoth Agile Fighter Necklace"
-      ]
+      "string": {}
     },
-
-    "rarity": {
-      "string": ["epic", "legendary", "hardcore"]
+    "avatarUrl": {
+      "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
     },
-
-    "rarityType": {
-      "int": [4, 3, 2]
+    "statusMessage": {
+      "string": ["working from home", "watching Netflix"]
     },
-
-    "requiredLevel": {
-      "int": [100, 80, 70]
+    "email": {
+      "regexp": "#[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
     },
-
-    "enchantmentLevel": {
-      "int": [20, 15, 0]
+    "color": {
+      "regexp": "#[0-9A-F]{6}"
     },
-
-    "bindStatus": {
-      "string": ["Bound", "Binds when equipped"]
+    "age": {
+      "int": {
+        "min": 21,
+        "max": 100
+      }
     },
-
-    "baseTier": {
-      "int": [6, 5]
-    },
-
-    "currentTier": {
-      "int": [20, 10]
-    },
-
-    "baseDurability": {
-      "int": [101, 73, 115]
-    },
-
-    "currentDurability": {
-      "int": [125]
-    },
-
-    "type": {
-      "string": ["Accessory", "Armor"]
-    },
-
-    "position": {
-      "string": ["Ring", "Earring", "Necklace"]
-    },
-
-    "physicalDefense": {
-      "int": [0]
-    },
-
-    "magicalDefense": {
-      "int": [0]
-    },
-
-    "worth": {
-      "int": [14630, 750, 999]
-    },
-
-    "worthType": {
-      "string": ["Gold", "Diamonds"]
-    },
-
-    "attributes": {
-      "hasMany": "Attribute"
-    },
-
-    "stats": {
-      "hasMany": "Stat"
-    },
-
-    "runes": {
-      "hasMany": "Rune"
-    }
-  },
-
-  "Attribute": {
-    "type": {
-      "string": [
-        "Stamina",
-        "Physical Critical Hit Rate",
-        "Physical Critical Damage",
-        "Magical Critical Damage"
-      ]
-    },
-    "value": { "int": [546, 80.4, 64.8] },
-    "item": {
-      "belongsTo": "Item"
-    }
-  },
-  "Stat": {
-    "name": {
-      "string": [
-        "Hardcore Speed",
-        "Hardcore Swiftness",
-        "Hardcore Mind",
-        "Hardcore Rage"
-      ]
-    },
-    "rarity": { "int": [3, 2, 1] },
-    "type": { "string": ["Dexterity", "Stamina", "Physical Attack"] },
-    "value": { "int": [246, 234, 702] },
-    "item": {
-      "belongsTo": "Item"
-    }
-  },
-  "Rune": {
-    "name": { "string": ["Massacre X", "Enigma X", "Assasin X", "Tyrant X"] },
-    "tier": { "int": [10] },
-    "type": { "string": ["Dexterity", "Stamina", "Physical Attack"] },
-    "value": { "int": [216, 540] },
-    "item": {
-      "belongsTo": "Item"
+    "isPublic": {
+      "boolean": {}
     }
   }
 }
