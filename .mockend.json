@@ -33,7 +33,7 @@
     },
 
     "currentTier": {
-      "string": [20, 10]
+      "int": [20, 10]
     },
 
     "baseDurability": {
