@@ -90,7 +90,10 @@
         "Magical Critical Damage"
       ]
     },
-    "value": { "int": [546, 80.4, 64.8] }
+    "value": { "int": [546, 80.4, 64.8] },
+    "item": {
+      "belongsTo": "Item"
+    }
   },
   "Stat": {
     "name": {
@@ -103,12 +106,18 @@
     },
     "rarity": { "int": [3, 2, 1] },
     "type": { "string": ["Dexterity", "Stamina", "Physical Attack"] },
-    "value": { "int": [246, 234, 702] }
+    "value": { "int": [246, 234, 702] },
+    "item": {
+      "belongsTo": "Item"
+    }
   },
   "Rune": {
     "name": { "string": ["Massacre X", "Enigma X", "Assasin X", "Tyrant X"] },
     "tier": { "int": [10] },
     "type": { "string": ["Dexterity", "Stamina", "Physical Attack"] },
-    "value": { "int": [216, 540] }
+    "value": { "int": [216, 540] },
+    "item": {
+      "belongsTo": "Item"
+    }
   }
 }
