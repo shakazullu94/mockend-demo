@@ -1,41 +1,123 @@
 {
-  "Post": {
-    "title": { "loremWord": {} },
-    "comments": {
-      "hasMany": "Comment"
-    }
-  },
-  "Comment": {
-    "body": { "string": {} },
-    "post": {
-      "belongsTo": "Post"
+  "Item": {
+    "name": {
+      "string": [
+        "Aoth Agile Fighter Ring",
+        "Aoth Agile Fighter Earring",
+        "Aoth Agile Fighter Necklace"
+      ]
+    },
+
+    "rarity": {
+      "string": ["epic", "legendary", "hardcore"]
+    },
+
+    "rarityType": {
+      "int": [4, 3, 2]
+    },
+
+    "requiredLevel": {
+      "int": [100, 80, 70]
+    },
+
+    "enchantmentLevel": {
+      "int": [20, 15, 0]
+    },
+
+    "bindStatus": {
+      "string": ["Bound", "Binds when equipped"]
+    },
+
+    "baseTier": {
+      "int": [6, 5]
+    },
+
+    "currentTier": {
+      "int": [20, 10]
+    },
+
+    "baseDurability": {
+      "int": [101, 73, 115]
+    },
+
+    "currentDurability": {
+      "int": [125]
+    },
+
+    "type": {
+      "string": ["Accessory", "Armor"]
+    },
+
+    "position": {
+      "string": ["Ring", "Earring", "Necklace"]
+    },
+
+    "physicalDefense": {
+      "int": [0]
+    },
+
+    "magicalDefense": {
+      "int": [0]
+    },
+
+    "worth": {
+      "int": [14630, 750, 999]
+    },
+
+    "worthType": {
+      "string": ["Gold", "Diamonds"]
+    },
+
+    "attributes": {
+      "hasMany": "Attribute"
+    },
+
+    "stats": {
+      "hasMany": "Stat"
+    },
+
+    "runes": {
+      "hasMany": "Rune"
     }
   },
 
-  "User": {
+  "Attribute": {
+    "type": {
+      "string": [
+        "Stamina",
+        "Physical Critical Hit Rate",
+        "Physical Critical Damage",
+        "Magical Critical Damage"
+      ]
+    },
+    "value": { "int": [546, 80.4, 64.8] },
+    "item": {
+      "belongsTo": "Item"
+    }
+  },
+  "Stat": {
     "name": {
-      "string": {}
+      "string": [
+        "Hardcore Speed",
+        "Hardcore Swiftness",
+        "Hardcore Mind",
+        "Hardcore Rage"
+      ]
     },
-    "avatarUrl": {
-      "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
-    },
-    "statusMessage": {
-      "string": ["working from home", "watching Netflix"]
-    },
-    "email": {
-      "regexp": "#[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
-    },
-    "color": {
-      "regexp": "#[0-9A-F]{6}"
-    },
-    "age": {
-      "int": {
-        "min": 21,
-        "max": 100
-      }
-    },
-    "isPublic": {
-      "boolean": {}
+    "rarity": { "int": [3, 2, 1] },
+    "type": { "string": ["Dexterity", "Stamina", "Physical Attack"] },
+    "value": { "int": [246, 234, 702] },
+    "item": {
+      "belongsTo": "Item"
+    }
+  },
+  "Rune": {
+    "name": { "string": ["Massacre X", "Enigma X", "Assasin X", "Tyrant X"] },
+    "tier": { "int": [10] },
+    "type": { "string": ["Dexterity", "Stamina", "Physical Attack"] },
+    "value": { "int": [216, 540] },
+    "item": {
+      "belongsTo": "Item"
     }
   }
 }
