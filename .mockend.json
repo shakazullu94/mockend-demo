@@ -66,6 +66,49 @@
 
     "worthType": {
       "string": ["Gold", "Diamonds"]
+    },
+
+    "attributes": {
+      "hasMany": "Attribute"
+    },
+
+    "stats": {
+      "hasMany": "Stat"
+    },
+
+    "runes": {
+      "hasMany": "Rune"
     }
+  },
+
+  "Attribute": {
+    "type": {
+      "string": [
+        "Stamina",
+        "Physical Critical Hit Rate",
+        "Physical Critical Damage",
+        "Magical Critical Damage"
+      ]
+    },
+    "value": { "int": [546, 80.4, 64.8] }
+  },
+  "Stat": {
+    "name": {
+      "string": [
+        "Hardcore Speed",
+        "Hardcore Swiftness",
+        "Hardcore Mind",
+        "Hardcore Rage"
+      ]
+    },
+    "rarity": { "int": [3, 2, 1] },
+    "type": { "string": ["Dexterity", "Stamina", "Physical Attack"] },
+    "value": { "int": [246, 234, 702] }
+  },
+  "Rune": {
+    "name": { "string": ["Massacre X", "Enigma X", "Assasin X", "Tyrant X"] },
+    "tier": { "int": [10] },
+    "type": { "string": ["Dexterity", "Stamina", "Physical Attack"] },
+    "value": { "int": [216, 540] }
   }
 }
